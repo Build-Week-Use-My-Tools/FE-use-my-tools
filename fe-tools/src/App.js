@@ -19,8 +19,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Yo!</h1>
-      <h2>test Change</h2>
       <NavLink to='/mainpage'>Main Page</NavLink>
       <Route path='/' component={Login} />
       <Route path='/register' component={RegisterForm} />
