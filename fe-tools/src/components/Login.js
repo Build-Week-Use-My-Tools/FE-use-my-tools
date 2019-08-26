@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const Login = (props) => {
     // loginData will store the email and Password input by user and is sent to the backend to verify
-    const[loginData, setLoginData] = useState({ email: '', password: ''})
+    const[loginData, setLoginData] = useState({ email: '', password: '', })
 
     const submitHandler = event => {
         event.preventDefault();
@@ -17,9 +17,10 @@ const Login = (props) => {
 
     const loginSubmit = event => {
         event.preventDefault();
-        axios.post('https://bw-usemytools.herokuapp.com//createnewuser', loginData)
+        axios.post('https://bw-usemytools.herokuapp.com/createnewuser', loginData, {headers: {'Content-Type': 'application/json'}})
             .then(res => {
                 console.log('res.data from login server', res.data)
+                setLoginData(res.data)
             })
             .catch(err => console.log(err.response))
     }
