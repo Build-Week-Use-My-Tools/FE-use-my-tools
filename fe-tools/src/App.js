@@ -13,7 +13,7 @@ function App() {
   const[toolList, setToolList] = useState([])
 
   // useEffect(() => {
-  //   axios.get('https://bw-usemytools.herokuapp.com/')
+  //   axios.get('https://bw-usemytools.herokuapp.com//createnewuser')
   //     .then(res => console.log(res))
   // })
 
