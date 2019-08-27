@@ -27,7 +27,6 @@ function App() {
 
   return (
     <div className="App">
-
       <Route exact path='/' component={Login} />
       <Route exact path='/register' component={RegisterForm} />
       <Route exact path='/mainpage' render={props => <MainPage {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
