@@ -1,20 +1,23 @@
 import React, { useState } from 'react'
+import { Route } from 'react-router-dom'
 import Navigation from "./Navigation";
 
 import LoaningTools from './LoaningTools'
 import BorrowingTools from './BorrowingTools'
+import AddTool from './AddTool'
 
 
 const Profile = (props) => {
+    const[userToolList, setUserToolList] = useState([])
     console.log('props in Profile.js', props)
-    const {addedTools, setAddedTools} = useState()
+
 
     return (
         <div>
             <h1>Profile Page</h1>
-            <button>Add tool available to loan</button>
+            <button onClick={() => {props.history.push('/addtool')}}>Add tool available to loan</button>
             <div className='lb'>
-                <LoaningTools />
+                <LoaningTools userToolList={userToolList} />
                 <BorrowingTools />
             </div>
             
