@@ -1,9 +1,12 @@
 import React from 'react'
-
+import Navigation from "./Navigation";
 const Profile = () => {
     return (
-        <h1>from Profile</h1>
-    )
+        <div>
+            <h1>Profile Page</h1>
+            <Navigation/>
+        </div>
+    );
 }
 
 export default Profile
