@@ -7,10 +7,9 @@ const MainPage = () => {
     const [state, setState] = useState([]);
 
     useEffect(() => {
-        axios.get("")
+        axios.get("https://rickandmortyapi.com/api/character/")
         .then(res => {
-            console.log(res.data)
-            setState(res.data);
+            setState(res.data.results);
         })
         .catch(err => 
             console.log(err))

@@ -7,7 +7,6 @@ const ToolDetails = (props) => {
     console.log(props);
     return (
     <div>
-        <Navigation/>
         <Card>
             <Image src={props.image}/>
             <Card.Content>
