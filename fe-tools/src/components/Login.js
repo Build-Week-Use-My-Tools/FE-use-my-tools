@@ -7,9 +7,6 @@ const Login = (props) => {
     // loginData will store the email and Password input by user and is sent to the backend to verify
     const[loginData, setLoginData] = useState({ email: '', password: '', })
 
-    const submitHandler = event => {
-        event.preventDefault();
-    }
 
     const changeHandler = event => {
         setLoginData({...loginData, [event.target.name]: event.target.value})
@@ -17,11 +14,11 @@ const Login = (props) => {
 
     const loginSubmit = event => {
         event.preventDefault();
-        axios.post('https://bw-usemytools.herokuapp.com/createnewuser', loginData, {headers: {'Content-Type': 'application/json'}})
-            .then(res => {
+        axios.post('https://bw-usemytools.herokuapp.com/oauth/token', `grant_type=password&username=${loginData.email}&password=${loginData.password}`, {headers: { Authorization: 'Basic bGFtYmRhLWNsaWVudDpsYW1iZGEtc2VjcmV0', 'Content-Type': 'application/x-www-form-urlencoded'}})
+            .then(res => 
                 console.log('res.data from login server', res.data)
-                setLoginData(res.data)
-            })
+                // setLoginData(res.data)
+            )
             .catch(err => console.log(err.response))
     }
 
@@ -29,7 +26,7 @@ const Login = (props) => {
     return (
         <Grid textAlign='center' verticalAlign='middle' style={{height: "100vh"}}>
             <Grid.Column style={{maxWidth: 500}}>
-                <Form onSubmit={submitHandler}>
+                <Form onSubmit={loginSubmit}>
                     <Segment>
                         <Form.Input fluid type='email' placeholder='Email' icon='user' iconPosition='left' name='email' value={loginData.email} onChange={changeHandler} required />
                         <Form.Input fluid type='password' placeholder='Password' icon='lock' iconPosition='left' name='password' value={loginData.password} onChange={changeHandler} required />
