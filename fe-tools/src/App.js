@@ -31,7 +31,10 @@ function App() {
       <Route exact path='/register' component={RegisterForm} />
       <Route exact path='/mainpage' component={MainPage} />
       <Route exact path='/mainpage/:id' component={ToolCard} />
-      <Route exact path='/profile' component={Profile} />
+      <Route exact path='/profile'
+        render={props => <Profile {...props} toolList={toolList} setToolList={setToolList} />}
+      
+      />
 
     </div>
   );
