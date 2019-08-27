@@ -7,7 +7,7 @@ import axios from 'axios'
 import Login from './components/Login'
 import RegisterForm from './components/RegisterForm'
 import MainPage from './components/MainPage'
-import ToolDetails from './components/ToolDetails'
+import ToolCard from './components/ToolCard'
 import Profile from './components/Profile'
 import PrivateRoute from './components/PrivateRoute'
 
@@ -25,7 +25,7 @@ function App() {
       <Route exact path='/' component={Login} />
       <Route exact path='/register' component={RegisterForm} />
       <PrivateRoute exact path='/mainpage' component={MainPage} />
-      <Route exact path='/mainpage/:id' component={ToolDetails} />
+      <Route exact path='/mainpage/:id' component={ToolCard} />
       <Route exact path='/profile' component={Profile} />
 
     </div>

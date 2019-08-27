@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from "axios";
 import Navigation from "./Navigation"
-import ToolDetails from "./ToolDetails"
+import ToolCard from "./ToolCard"
 
 const MainPage = () => {
     const [state, setState] = useState([]);
@@ -20,7 +20,7 @@ const MainPage = () => {
             <Navigation/>
             <div>
                 {state.map((tool) => {
-                    return <ToolDetails     key={tool.id}
+                    return <ToolCard     key={tool.id}
                                             image={tool.image}
                                             name={tool.name}
                     />
