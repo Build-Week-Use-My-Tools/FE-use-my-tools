@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavLink to='/mainpage'>Main Page</NavLink>
+  
       <Route exact path='/' component={Login} />
       <Route exact path='/register' component={RegisterForm} />
       <PrivateRoute exact path='/mainpage' component={MainPage} />

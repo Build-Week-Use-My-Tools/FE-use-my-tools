@@ -7,10 +7,13 @@ const ToolCard = (props) => {
     return (
     <div>
         <Card>
-            <Image src={props.image}/>
             <Card.Content>
-                <h1>Name: {props.name}</h1>
-                <p>Rental Price:{props.price}</p>
+                <h1>Name: {props.MainPageprops.firstname}                  {props.MainPageprops.lastname}</h1>
+                <div>{props.MainPageprops.tools.map((tool) => {
+                    return (<div key={tool.toolid}><Image src={tool.image}/>
+                            <p>Rental Price:${tool.price}</p>
+                            </div>
+                )})}</div>
             </Card.Content>
         </Card>
     </div>

@@ -7,9 +7,10 @@ const MainPage = () => {
     const [state, setState] = useState([]);
 
     useEffect(() => {
-        axios.get("https://rickandmortyapi.com/api/character/")
+        axios.get('https://bw-usemytools.herokuapp.com/owners', {headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }})
         .then(res => {
-            setState(res.data.results);
+            console.log(res.data)
+            setState(res.data);
         })
         .catch(err => 
             console.log(err))
@@ -20,9 +21,8 @@ const MainPage = () => {
             <Navigation/>
             <div>
                 {state.map((tool) => {
-                    return <ToolCard     key={tool.id}
-                                            image={tool.image}
-                                            name={tool.name}
+                    return <ToolCard     key={tool.ownerid}
+                                        MainPageprops={tool}
                     />
                 })}
             </div>
