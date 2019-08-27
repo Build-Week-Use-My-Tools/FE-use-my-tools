@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Image, Grid, Segment } from 'semantic-ui-react';
+import { Form, Grid, Segment } from 'semantic-ui-react';
 import axios from 'axios';
-import logo from '../assets/OLAD_logo.png';
+// import logo from '../assets/OLAD_logo.png';
 
 export default function RegisterForm(props) {
     const [userCredentials, setCredentials] = useState({
@@ -32,7 +32,7 @@ export default function RegisterForm(props) {
         <div>
             <Grid textAlign="center" verticalAlign="middle" style={{ height: "100vh" }}>
                 <Grid.Column style={{ maxWidth: 500 }}>
-                    <Image centered src={logo} alt="Logo" style={{ width: "300px" }} />
+                    {/* <Image centered src={logo} alt="Logo" style={{ width: "300px" }} /> */}
 
                     <Form onSubmit={submitHandler}>
                         <Segment>
