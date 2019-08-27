@@ -2,3 +2,19 @@
   text-align: center;
 }
 
+.lb {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.loan {
+  border-bottom: 3px solid black;
+}
+
+.borrow {
+  border-bottom: 3px solid black;
+  margin-top: 0px;
+}
+
