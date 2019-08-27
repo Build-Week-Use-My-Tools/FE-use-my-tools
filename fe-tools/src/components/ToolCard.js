@@ -1,9 +1,8 @@
 import React from "react";
-import Navigation from "./Navigation";
 import {Card, Image} from 'semantic-ui-react';
 
 
-const ToolDetails = (props) => {
+const ToolCard = (props) => {
     console.log(props);
     return (
     <div>
@@ -18,4 +17,4 @@ const ToolDetails = (props) => {
     );
 };
 
-export default ToolDetails;
+export default ToolCard;
