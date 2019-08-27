@@ -17,9 +17,11 @@ const Login = (props) => {
     const loginSubmit = event => {
         event.preventDefault();
         axios.post('https://bw-usemytools.herokuapp.com/oauth/token', `grant_type=password&username=${loginData.email}&password=${loginData.password}`, {headers: { Authorization: 'Basic bGFtYmRhLWNsaWVudDpsYW1iZGEtc2VjcmV0', 'Content-Type': 'application/x-www-form-urlencoded'}})
-            .then(res => 
+            .then(res => {
                 console.log('res.data from login server', res.data)
-                // setLoginData(res.data)
+                localStorage.setItem('token', res.data.access_token)
+                props.history.push('/mainpage')
+                }
             )
             .catch(err => console.log(err.response))
     }
@@ -45,7 +47,7 @@ const Login = (props) => {
                     </Message>
                 </Grid.Column>
             </Grid>
-            <p><div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"         title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"         title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></p>
+            <div><div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"         title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"         title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></div>
         </div>
     )
 }
