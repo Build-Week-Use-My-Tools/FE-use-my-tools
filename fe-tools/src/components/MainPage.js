@@ -1,28 +1,18 @@
-import React, {useState, useEffect} from 'react'
-import axios from "axios";
+import React from 'react'
 import Navigation from "./Navigation"
 import ToolCard from "./ToolCard"
 
-const MainPage = () => {
-    const [state, setState] = useState([]);
+const MainPage = (props) => {
 
-    useEffect(() => {
-        axios.get("https://rickandmortyapi.com/api/character/")
-        .then(res => {
-            setState(res.data.results);
-        })
-        .catch(err => 
-            console.log(err))
-    }, []);
     return (
         <section>
             <h1>MainPage</h1>
-            <Navigation/>
-            <div>
-                {state.map((tool) => {
-                    return <ToolCard     key={tool.id}
-                                            image={tool.image}
-                                            name={tool.name}
+            <h2 onClick={() => {props.history.push('/tooldetail')}}>info</h2>
+            <Navigation props={props}/>
+            <div id="cards">
+                {props.allToolList.map((tool) => {
+                    return <ToolCard     key={tool.ownerid}
+                                        MainPageprops={tool}
                     />
                 })}
             </div>
