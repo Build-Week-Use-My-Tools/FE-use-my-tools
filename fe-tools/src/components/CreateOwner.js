@@ -14,12 +14,10 @@ export default function CreateOwner(props) {
 
         axios.post("https://bw-usemytools.herokuapp.com/newowner", userCredentials,  {headers: {"Content-Type": "application/json" }})
             .then(response => {
-                console.log(response);
+                console.log(response.data);
                 props.history.push("/mainpage");
             })
-            .catch(error => {
-                console.log(error);
-            })
+            .catch(error => console.log(error.response))
     }
 
     const changeHandler = event => {
