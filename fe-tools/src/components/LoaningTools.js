@@ -1,8 +1,12 @@
 import React from 'react'
 
-const LoaningTools = () => {
+const LoaningTools = (props) => {
+    console.log('props.props', props)
     return (
-        <h2 className='loan'>Loaning tools</h2>
+        <div>
+            <h2 className='loan'>Loaning tools</h2>
+            <button onClick={() => {props.props2.history.push('/edittool/:id')}}>Edit tool available to loan</button>
+        </div>
     )
 }
 
