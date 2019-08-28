@@ -1,5 +1,5 @@
 import React from 'react'
-import Navigation from "./Navigation"
+import MainNav from "./MainNav"
 import ToolCard from "./ToolCard"
 
 const MainPage = (props) => {
@@ -7,7 +7,7 @@ const MainPage = (props) => {
     return (
         <section>
             <h1>MainPage</h1>
-            <Navigation props={props}/>
+            <MainNav props={props}/>
             <div id="cards">
                 {props.allToolList.map((tool) => {
                     return<ToolCard     key={tool.ownerid}
