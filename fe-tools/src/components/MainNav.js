@@ -8,7 +8,7 @@ const Navigation = (props) => {
                 <div>
                     <NavLink to="/mainpage">Main Page</NavLink>
                 </div>
-                <button onClick={() => {props.props.history.push('/createowner')}}>Become an Owner</button>
+                <NavLink onClick={() => {props.props.history.push('/createowner')}}>Become an Owner</NavLink>
                 <div>
                     <NavLink to="/profile">Profile</NavLink>
                 </div>
