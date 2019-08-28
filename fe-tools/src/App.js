@@ -7,7 +7,6 @@ import axios from 'axios'
 import Login from './components/Login'
 import RegisterForm from './components/RegisterForm'
 import MainPage from './components/MainPage'
-import ToolDetails from "./components/ToolDetails";
 import Profile from './components/Profile'
 import AddTool from './components/AddTool'
 import EditTool from './components/EditTool'
@@ -34,7 +33,6 @@ function App() {
       <Route exact path='/' component={Login} />
       <Route exact path='/register' component={RegisterForm} />
       <Route exact path='/mainpage' render={props => <MainPage {...props} allToolList={allToolList} />} />
-      <Route exact path='/tooldetail/:id' render={props => <ToolDetails {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
       <Route exact path='/profile' render={props => <Profile {...props} allToolList={allToolList} />} />
       <Route exact path='/addtool' render={props => <AddTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
       <Route exact path='/edittool/:id' render={props => <EditTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
