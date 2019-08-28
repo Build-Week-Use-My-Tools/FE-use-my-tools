@@ -5,8 +5,7 @@ import {Card, Image} from 'semantic-ui-react';
 const ToolCard = (props) => {
     console.log(props);
     return (
-    <div>
-        <Card>
+        <Card id="card">
             <Card.Content>
                 <h1>Name: {props.MainPageprops.firstname}                  {props.MainPageprops.lastname}</h1>
                 <div>{props.MainPageprops.tools.map((tool) => {
@@ -16,7 +15,6 @@ const ToolCard = (props) => {
                 )})}</div>
             </Card.Content>
         </Card>
-    </div>
     );
 };
 

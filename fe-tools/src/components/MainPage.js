@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Navigation from "./Navigation"
 import ToolCard from "./ToolCard"
 
@@ -7,8 +7,9 @@ const MainPage = (props) => {
     return (
         <section>
             <h1>MainPage</h1>
+            <h2 onClick={() => {props.history.push('/tooldetail')}}>info</h2>
             <Navigation/>
-            <div>
+            <div id="cards">
                 {props.allToolList.map((tool) => {
                     return <ToolCard     key={tool.ownerid}
                                         MainPageprops={tool}
