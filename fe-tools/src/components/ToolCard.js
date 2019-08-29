@@ -24,7 +24,7 @@ const ToolCard = (props) => {
                         <p>Rental Price:${props.MainPageprops.price}</p>
                         <p>Quantity: {props.MainPageprops.quantity}</p>
                         <NavLink to={`/edittool/${props.MainPageprops.toolid}`} className="editbutton">Edit Tool</NavLink>
-                        <NavLink className="editbutton">Rent</NavLink>
+                        <NavLink to="/mainpage" className="editbutton">Rent</NavLink>
                     </div>
                 </div>
             </Card.Content>
