@@ -1,21 +1,32 @@
 import React from "react";
 import {Card, Image} from 'semantic-ui-react';
 import {NavLink} from "react-router-dom";
+import Axios from "axios";
+
 
 
 const ToolCard = (props) => {
-    console.log(props);
+
+    // const requestHandler = e => {
+    //     e.preventDefault();
+
+    //     Axios.post(`https://bw-usemytools.herokuapp.com/data/{toolid}/owners/{ownerid}`,)
+    // }
+
     return (
         <Card id="card">
             <Card.Content>
                 <div key={props.MainPageprops.toolid}>
-                <h1>Tool: {props.MainPageprops.toolname}</h1>
-                    <div><Image src={props.MainPageprops.image}/>
-                            <p>Rental Price:${props.MainPageprops.price}</p>
-                            <p>Quantity: {props.MainPageprops.quantity}</p>
-                            <NavLink to="/edittool" className="editbutton">Edit Tool</NavLink>
-                            </div>
-                            </div>
+                    <div>   
+                        <h1>Tool: {props.MainPageprops.toolname}</h1>
+                    
+                        <Image src={props.MainPageprops.image}/>
+                        <p>Rental Price:${props.MainPageprops.price}</p>
+                        <p>Quantity: {props.MainPageprops.quantity}</p>
+                        <NavLink to={`/edittool/${props.MainPageprops.toolid}`} className="editbutton">Edit Tool</NavLink>
+                        <button className="editbutton">Request to Borrow</button>
+                    </div>
+                </div>
             </Card.Content>
         </Card>
     );

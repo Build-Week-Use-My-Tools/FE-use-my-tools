@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AllToolListContext } from '../contexts/AllToolListContext'
 
-const LoaningTools = (props) => {
-    console.log('props.props on loaningTools', props)
+const LoaningTools = () => {
+    const tools = useContext(AllToolListContext)
+
+    console.log('context working?', tools)
     return (
         <div>
             <h2 className='loan'>Loaning tools</h2>
-            <button onClick={() => {props.props2.history.push('/edittool')}}>Edit tool available to loan</button>
         </div>
     )
 }

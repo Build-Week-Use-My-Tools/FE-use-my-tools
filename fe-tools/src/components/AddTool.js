@@ -42,7 +42,7 @@ export default function AddTool(props) {
                             <Form.Input fluid type="text" placeholder="Tool Name" name="toolname" onChange={changeHandler} value={userCredentials.toolname} required />
                             <Form.Input fluid type="number" placeholder="Quantity" name="quantity" onChange={changeHandler} value={userCredentials.quantity} />
                             <Form.Input fluid type="number" placeholder="Price" name="price" onChange={changeHandler} value={userCredentials.price} />
-                            <Form.Input fluid type="test" placeholder="Image" name="image" onChange={changeHandler} value={userCredentials.image} />
+                            <Form.Input fluid type="text" placeholder="Image" name="image" onChange={changeHandler} value={userCredentials.image} />
                             <Form.Button fluid content="Add Tool" size="large" />
                         </Segment>
                     </Form>

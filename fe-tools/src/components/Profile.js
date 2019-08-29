@@ -16,8 +16,8 @@ const Profile = (props) => {
             <ProfileNav/>
             <button onClick={() => {props.history.push('/addtool')}}>Add tool available to loan</button>
             <div className='lb'>
-                <LoaningTools props2={props} />
-                <BorrowingTools props2={props}/>
+                <LoaningTools />
+                <BorrowingTools />
             </div>
             
             
