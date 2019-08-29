@@ -19,7 +19,6 @@ const Login = (props) => {
         event.preventDefault();
         axios.post('https://bw-usemytools.herokuapp.com/oauth/token', `grant_type=password&username=${loginData.email}&password=${loginData.password}`, {headers: { Authorization: 'Basic bGFtYmRhLWNsaWVudDpsYW1iZGEtc2VjcmV0', 'Content-Type': 'application/x-www-form-urlencoded'}})
             .then(res => {
-                console.log('res.data from login server', res.data)
                 localStorage.setItem('token', res.data.access_token)
                 props.history.push('/mainpage')
                 }
@@ -41,7 +40,6 @@ const Login = (props) => {
 
                             <Form.Button fluid content='Login' size='large' />
                         </Segment>
-
                     </Form>
                     <Message>
                         Don't have an account? <Link to='/register'>Sign Up</Link>
