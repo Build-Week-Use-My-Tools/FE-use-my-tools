@@ -23,7 +23,8 @@
   width:500px;
   max-width: 99%;
   margin:1%;
-  background:#C84C09 ;}
+  background:#C84C09 ;
+}
 
   .content {
     line-height: 1.5;
@@ -55,5 +56,33 @@ a{
   margin:20px 40px;
   text-decoration:none;
   font-size: 1.3rem;
+  color:#C84C09;
 
+}
+
+.editbutton{
+  background:white;
+  color: #C84C09;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 50;
+  letter-spacing: 0.125em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  max-width: 20rem;
+  height: 3.75em;
+  line-height: 3.75em;
+  border-radius: 3.75em;
+  padding: 0 2.5em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border:1px solid grey;
+}
+
+.editbutton:hover{
+  background-color:lightgrey;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
