@@ -9,8 +9,12 @@ const ToolCard = (props) => {
             <Card.Content>
                 <h1>Name: {props.MainPageprops.firstname}                  {props.MainPageprops.lastname}</h1>
                 <div>{props.MainPageprops.tools.map((tool) => {
-                    return (<div key={tool.toolid}><Image src={tool.image}/>
+                    return (<div key={tool.toolid}>
+                    <div><Image src={tool.image}/>
                             <p>Rental Price:${tool.price}</p>
+                            <p>Tool: {tool.toolname}</p>
+                            <p>Quantity: {tool.quantity}</p>
+                            </div>
                             </div>
                 )})}</div>
             </Card.Content>

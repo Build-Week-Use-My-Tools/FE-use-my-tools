@@ -1,11 +1,10 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Anton", "Fjalla One"
-    sans-serif;
+  font-family:"Fjalla One", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #6B686C;
+  font-size:1.5rem;
 }
 
 code {
@@ -14,5 +13,5 @@ code {
 }
 
 h1{
-  font-family:"Anton";
+  font-family: 'Anton', sans-serif;
 }
