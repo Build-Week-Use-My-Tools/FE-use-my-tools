@@ -13,7 +13,7 @@ const ToolCard = (props) => {
                     <div><Image src={props.MainPageprops.image}/>
                             <p>Rental Price:${props.MainPageprops.price}</p>
                             <p>Quantity: {props.MainPageprops.quantity}</p>
-                            <button><NavLink to="/edittool">Edit Tool</NavLink></button>
+                            <NavLink to="/edittool" className="editbutton">Edit Tool</NavLink>
                             </div>
                             </div>
             </Card.Content>
