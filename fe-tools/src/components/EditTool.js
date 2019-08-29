@@ -11,34 +11,33 @@ const initialTool = {
 }
 
 export default function EditTool(props) {
-    const [userCredentials, setCredentials] = useState({
-        borrowed: false,
-        toolname: "",
-        quantity: "",
-        price: "",
-        image: "",
-    });
+    const [userCredentials, setCredentials] = useState(initialTool);
 
     //{headers: {"Content-Type": "application/json" }}
 
+    const id = parseInt(props.match.params.id);
+
+    
+    // const specificTool =  if (props.allToolList) {return props.allToolList.find(tool => tool.toolid === id)} else {false}
+    console.log('props.alltoollist', props.allToolList)
 
     useEffect(() => {
-        const id = props.match.params.id;
-        const specificTool = props.allToolList.find(tool => `${tool.toolid}` === id)
+        const specificTool = props.allToolList ? props.allToolList.find(tool => tool.toolid === id) : false
         if(specificTool) setCredentials(specificTool)
-    }, [props.allToolList, props.match.params.id])
+    }, [id])
 
-    console.log('props in edit tool page need match prop', props)
+    
 
     const submitHandler = event => {
         event.preventDefault();
 
-        axios.put(`https://bw-usemytools.herokuapp.com/data/tools/${userCredentials.id}`, userCredentials,  {headers: {"Content-Type": "application/json" }})
+        axios.put(`https://bw-usemytools.herokuapp.com/data/tools/${id}`, userCredentials,  {headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }})
             .then(response => {
-                console.log(response);
+                console.log(response.config.data);
+                props.setAllToolList([...props.allToolList, userCredentials])
                 setCredentials(initialTool)
-                props.setAllToolList(response.data)
                 props.history.push("/mainpage");
+                
             })
             .catch(error => console.log(error.response))
     }
@@ -46,7 +45,7 @@ export default function EditTool(props) {
     const deleteHandler = event => {
         event.preventDefault();
 
-        axios.delete(`https://bw-usemytools.herokuapp.com/data/tools/${userCredentials.id}`, userCredentials, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}  } )
+        axios.delete(`https://bw-usemytools.herokuapp.com/data/tools/delete/${id}`, userCredentials,  {headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }})
              .then(res => {
                 console.log(res.data)
                 props.setAllToolList(res.data)

@@ -16,10 +16,11 @@ import CreateOwner  from './components/CreateOwner'
 import LoaningTools from './components/LoaningTools'
 
 
+
 function App() {
   const[allToolList, setAllToolList] = useState([])
 
-  useEffect(() => {
+  const theGet = useEffect(() => {
     axios.get('https://bw-usemytools.herokuapp.com/tools', {headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }})
       .then(res => {
         
@@ -37,11 +38,11 @@ function App() {
           
           <Route exact path='/' component={Login} />
           <Route exact path='/register' component={RegisterForm} />
-          <Route exact path='/mainpage' render={props => <MainPage {...props} allToolList={allToolList} />} />
+          <Route exact path='/mainpage' render={props => <MainPage {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
           <Route exact path='/profile' component={Profile} />
           <Route exact path='/profile/loaningtools' component={LoaningTools} />
           <Route exact path='/addtool' render={props => <AddTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
-          <Route exact path='/edittool/:id' render={props => <EditTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
+          <Route exact path='/edittool/:id' render={props => <EditTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} theGet={theGet} />} />
           <Route exact path='/createowner' render={props => <CreateOwner {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
         </div>
       </SetAllToolListContext.Provider>

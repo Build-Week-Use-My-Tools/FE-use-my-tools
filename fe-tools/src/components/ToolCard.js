@@ -7,10 +7,11 @@ import Axios from "axios";
 
 const ToolCard = (props) => {
 
+    console.log('props from toolcard', props)
     // const requestHandler = e => {
     //     e.preventDefault();
 
-    //     Axios.post(`https://bw-usemytools.herokuapp.com/data/{toolid}/owners/{ownerid}`,)
+    
     // }
 
     return (
