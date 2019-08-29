@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Grid, Segment } from 'semantic-ui-react';
 import axios from 'axios';
-// import logo from '../assets/OLAD_logo.png';
 
 export default function RegisterForm(props) {
     const [userCredentials, setCredentials] = useState({
@@ -15,13 +14,11 @@ export default function RegisterForm(props) {
         event.preventDefault();
 
         axios.post("https://bw-usemytools.herokuapp.com/createnewuser", userCredentials,  {headers: {"Content-Type": "application/json" }})
-            .then(response => {
-                console.log(response);
+            .then(res => {
+                console.log(res);
                 props.history.push("/");
             })
-            .catch(error => {
-                console.log(error);
-            })
+            .catch(err => console.log(err.response))
     }
 
     const changeHandler = event => {

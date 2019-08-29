@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import {Card, Image} from 'semantic-ui-react';
 import {NavLink} from "react-router-dom";
 import Axios from "axios";
+import { SetAllToolListContext } from '../contexts/SetAllToolListContext'
+import { AllToolListContext } from '../contexts/AllToolListContext'
 
 
 
 const ToolCard = (props) => {
+    const setTools = useContext(SetAllToolListContext)
+    const tools = useContext(AllToolListContext)
+    console.log('settools', setTools)
 
     console.log('props from toolcard', props)
     // const requestHandler = e => {
     //     e.preventDefault();
+    //     if(props.MainPageprops.borrowed === false) {
+    //         setTools([...tools, props.MainPageprops.borrowed: true])
+    //     }
+    
 
     
     // }
