@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
-
 import axios from 'axios'
+import { AllToolListContext } from './contexts/AllToolListContext'
+import { SetAllToolListContext} from './contexts/SetAllToolListContext'
+
 
 import Login from './components/Login'
 import RegisterForm from './components/RegisterForm'
@@ -29,15 +31,21 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <Route exact path='/' component={Login} />
-      <Route exact path='/register' component={RegisterForm} />
-      <Route exact path='/mainpage' render={props => <MainPage {...props} allToolList={allToolList} />} />
-      <Route exact path='/profile' render={props => <Profile {...props} allToolList={allToolList} />} />
-      <Route exact path='/addtool' render={props => <AddTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
-      <Route exact path='/edittool/:id' render={props => <EditTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
-      <Route exact path='/createowner' render={props => <CreateOwner {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
-    </div>
+    <AllToolListContext.Provider value={allToolList}>
+      <SetAllToolListContext.Provider value={setAllToolList}>
+
+        <div className="App">
+          
+          <Route exact path='/' component={Login} />
+          <Route exact path='/register' component={RegisterForm} />
+          <Route exact path='/mainpage' render={props => <MainPage {...props} allToolList={allToolList} />} />
+          <Route exact path='/profile' render={props => <Profile {...props} allToolList={allToolList} />} />
+          <Route exact path='/addtool' render={props => <AddTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
+          <Route exact path='/edittool' render={props => <EditTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
+          <Route exact path='/createowner' render={props => <CreateOwner {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
+        </div>
+      </SetAllToolListContext.Provider>
+    </AllToolListContext.Provider>
   );
 }
 

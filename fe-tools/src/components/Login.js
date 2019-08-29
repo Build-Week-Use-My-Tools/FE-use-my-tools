@@ -7,7 +7,8 @@ import logo from '../assets/handyman-tools.png'
 
 const Login = (props) => {
     // loginData will store the email and Password input by user and is sent to the backend to verify
-    const[loginData, setLoginData] = useState({ email: '', password: '', })
+    const[loginData, setLoginData] = useState({ email: '', password: '' })
+
 
 
     const changeHandler = event => {

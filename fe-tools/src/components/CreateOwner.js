@@ -12,9 +12,9 @@ export default function CreateOwner(props) {
     const submitHandler = event => {
         event.preventDefault();
 
-        axios.post("https://bw-usemytools.herokuapp.com/newowner", userCredentials,  {headers: {"Content-Type": "application/json" }})
-            .then(response => {
-                console.log(response.data);
+        axios.post("https://bw-usemytools.herokuapp.com/newowner", userCredentials,  {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`} })
+            .then(res => {
+                console.log('createOwner res.data', res.data);
                 props.history.push("/mainpage");
             })
             .catch(error => console.log(error.response))
