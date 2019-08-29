@@ -17,18 +17,16 @@ const ToolCard = (props) => {
         <Card id="card">
             <Card.Content>
                 <div key={props.MainPageprops.toolid}>
-                <h1>Tool: {props.MainPageprops.toolname}</h1>
-                    <div><Image src={props.MainPageprops.image}/>
-                            <p>Rental Price:${props.MainPageprops.price}</p>
-                            <p>Quantity: {props.MainPageprops.quantity}</p>
-<<<<<<< HEAD
-                            <button><NavLink to={`/edittool/${props.MainPageprops.toolid}`}>Edit Tool</NavLink></button>
-                            <button>Request to Borrow</button>
-=======
-                            <NavLink to="/edittool" className="editbutton">Edit Tool</NavLink>
->>>>>>> f6524a3b1d1d527b0fb6a7657dbe7dec27aa2dd9
-                            </div>
-                            </div>
+                    <div>   
+                        <h1>Tool: {props.MainPageprops.toolname}</h1>
+                    
+                        <Image src={props.MainPageprops.image}/>
+                        <p>Rental Price:${props.MainPageprops.price}</p>
+                        <p>Quantity: {props.MainPageprops.quantity}</p>
+                        <NavLink to={`/edittool/${props.MainPageprops.toolid}`} className="editbutton">Edit Tool</NavLink>
+                        <button className="editbutton">Request to Borrow</button>
+                    </div>
+                </div>
             </Card.Content>
         </Card>
     );
