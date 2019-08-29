@@ -21,7 +21,7 @@ function App() {
   const[allToolList, setAllToolList] = useState([])
 
   useEffect(() => {
-    axios.get('https://bw-usemytools.herokuapp.com/owners', {headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }})
+    axios.get('https://bw-usemytools.herokuapp.com/tools', {headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }})
       .then(res => {
         
         console.log('res.data from app.js get', res.data)

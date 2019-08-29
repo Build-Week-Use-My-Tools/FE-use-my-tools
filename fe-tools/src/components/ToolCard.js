@@ -1,5 +1,6 @@
 import React from "react";
 import {Card, Image} from 'semantic-ui-react';
+import {NavLink} from "react-router-dom";
 
 
 const ToolCard = (props) => {
@@ -7,16 +8,14 @@ const ToolCard = (props) => {
     return (
         <Card id="card">
             <Card.Content>
-                <h1>Name: {props.MainPageprops.firstname}                  {props.MainPageprops.lastname}</h1>
-                <div>{props.MainPageprops.tools.map((tool) => {
-                    return (<div key={tool.toolid}>
-                    <div><Image src={tool.image}/>
-                            <p>Rental Price:${tool.price}</p>
-                            <p>Tool: {tool.toolname}</p>
-                            <p>Quantity: {tool.quantity}</p>
+                <div key={props.MainPageprops.toolid}>
+                <h1>Tool: {props.MainPageprops.toolname}</h1>
+                    <div><Image src={props.MainPageprops.image}/>
+                            <p>Rental Price:${props.MainPageprops.price}</p>
+                            <p>Quantity: {props.MainPageprops.quantity}</p>
+                            <button><NavLink to="/edittool">Edit Tool</NavLink></button>
                             </div>
                             </div>
-                )})}</div>
             </Card.Content>
         </Card>
     );
