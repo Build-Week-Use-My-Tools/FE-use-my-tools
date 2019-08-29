@@ -13,6 +13,7 @@ import Profile from './components/Profile'
 import AddTool from './components/AddTool'
 import EditTool from './components/EditTool'
 import CreateOwner  from './components/CreateOwner'
+import LoaningTools from './components/LoaningTools'
 
 const fakeData = [{owner: 'mat', tools:[{tool1: 'hammer', tool2: 'saw'}]}, {owner: 'fred', tools:[{tool1: 'ham', tool2: 'airplane'}]}]
 
@@ -39,9 +40,10 @@ function App() {
           <Route exact path='/' component={Login} />
           <Route exact path='/register' component={RegisterForm} />
           <Route exact path='/mainpage' render={props => <MainPage {...props} allToolList={allToolList} />} />
-          <Route exact path='/profile' render={props => <Profile {...props} allToolList={allToolList} />} />
+          <Route exact path='/profile' component={Profile} />
+          <Route exact path='/profile/loaningtools' component={LoaningTools} />
           <Route exact path='/addtool' render={props => <AddTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
-          <Route exact path='/edittool' render={props => <EditTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
+          <Route exact path='/edittool/:id' render={props => <EditTool {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
           <Route exact path='/createowner' render={props => <CreateOwner {...props} allToolList={allToolList} setAllToolList={setAllToolList} />} />
         </div>
       </SetAllToolListContext.Provider>
