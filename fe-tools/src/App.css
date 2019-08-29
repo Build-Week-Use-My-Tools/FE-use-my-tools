@@ -50,6 +50,13 @@
   justify-content: center;
   background:#0E0D0D;
   align-items: center;
+  
+}
+
+.ownerbutton{
+  border: none;
+  background:#0E0D0D;
+  color:#C84C09;
 }
 
 a{

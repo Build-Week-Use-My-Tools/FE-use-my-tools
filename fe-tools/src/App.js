@@ -15,8 +15,6 @@ import EditTool from './components/EditTool'
 import CreateOwner  from './components/CreateOwner'
 import LoaningTools from './components/LoaningTools'
 
-const fakeData = [{owner: 'mat', tools:[{tool1: 'hammer', tool2: 'saw'}]}, {owner: 'fred', tools:[{tool1: 'ham', tool2: 'airplane'}]}]
-
 
 function App() {
   const[allToolList, setAllToolList] = useState([])

@@ -10,7 +10,7 @@ const MainPage = (props) => {
             <MainNav props={props}/>
             <div id="cards">
                 {props.allToolList.map((tool) => {
-                    return<ToolCard     key={tool.ownerid}
+                    return<ToolCard     key={tool.toolid}
                                         MainPageprops={tool}
                                         />
                                     })}
