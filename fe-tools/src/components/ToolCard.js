@@ -10,9 +10,9 @@ import { AllToolListContext } from '../contexts/AllToolListContext'
 const ToolCard = (props) => {
     const setTools = useContext(SetAllToolListContext)
     const tools = useContext(AllToolListContext)
-    console.log('settools', setTools)
+    // console.log('settools', setTools)
 
-    console.log('props from toolcard', props)
+    // console.log('props from toolcard', props)
     // const requestHandler = e => {
     //     e.preventDefault();
     //     if(props.MainPageprops.borrowed === false) {
@@ -33,8 +33,9 @@ const ToolCard = (props) => {
                         <Image src={props.MainPageprops.image}/>
                         <p>Rental Price:${props.MainPageprops.price}</p>
                         <p>Quantity: {props.MainPageprops.quantity}</p>
+                        {props.MainPageprops.borrowed === false ? <p>This tool is available to rent</p> : <p>This tool is not currently available</p>}
                         <NavLink to={`/edittool/${props.MainPageprops.toolid}`} className="editbutton">Edit Tool</NavLink>
-                        <NavLink to="/mainpage" className="editbutton">Rent</NavLink>
+                        {/* <NavLink to="/mainpage" className="editbutton">Rent</NavLink> */}
                     </div>
                 </div>
             </Card.Content>

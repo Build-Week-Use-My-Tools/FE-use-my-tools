@@ -13,7 +13,7 @@ const Navigation = (props) => {
                     <NavLink to="/profile">Profile</NavLink>
                 </div>
                 <div>
-                    <NavLink to="/">Sign Out</NavLink>
+                    <NavLink onClick={() => localStorage.clear()} to="/" >Sign Out</NavLink>
                 </div>
             </div>
         </div>
@@ -21,3 +21,4 @@ const Navigation = (props) => {
 };
 
 export default Navigation;
+
