@@ -6,7 +6,7 @@ const MainPage = (props) => {
     console.log(props)
     return (
         <section>
-            <h1>Use My Tool</h1>
+            <h1>Use My Tools</h1>
             <MainNav props={props}/>
             <div id="cards">
                 {props.allToolList.map((tool, ind) => {
